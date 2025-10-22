@@ -26,26 +26,26 @@ include 'includes/header.php';
             <div class="questionBlock">
                 <p>Nombre *</p>
                 <label class="sr-only">Nombre</label>
-                <input class="inputQuestion" type="text" placeholder="Nombre" class="identificacionNombre" required>
+                <input name="nombre" class="inputQuestion" type="text" placeholder="Nombre" class="identificacionNombre" required>
             </div>
             <div class="questionBlock">
                 <p>Apellidos *</p>
                 <label class="sr-only">Apellidos</label>
-                <input class="inputQuestion" type="text" placeholder="Apellidos" class="identificacionNombre" required>
+                <input name="apellidos" class="inputQuestion" type="text" placeholder="Apellidos" class="identificacionNombre" required>
             </div>
             <div class="questionBlock">
                 <p>Curso *</p>
                 <label class="sr-only">Curso</label>
-                <input class="inputQuestion" type="text" placeholder="Curso" class="identificacionCurso" required>
+                <input name="curso" class="inputQuestion" type="text" placeholder="Curso" class="identificacionCurso" required>
             </div>
             <div class="questionBlock">
                 <p>Correo electrónico *</p>
                 <label class="sr-only">Correo Electrónico</label>
-                <input class="inputQuestion" type="email" placeholder="Correo Electrónico" class="identificacionCorreo" required>
+                <input name="correoElectronico" class="inputQuestion" type="email" placeholder="Correo Electrónico" class="identificacionCorreo" required>
             </div>
             <div class="questionBlock">
                 <p>Fecha de nacimiento *</p>
-                <input class="inputQuestion" type="date" placeholder="Fecha" class="identificacionFecha" required>
+                <input name="fechaNacimiento" class="inputQuestion" type="date" placeholder="Fecha" class="identificacionFecha" required>
             </div>
         </fieldset>
         <fieldset class="field">
@@ -201,6 +201,79 @@ include 'includes/header.php';
             </div>
 
         </fieldset>
+
+        <fieldset class="field">
+            <legend>
+                <h3 class="fieldTitulo">Organización y bienestar</h3>
+            </legend>
+
+            <div class="questionBlock">
+                <h4 class="fieldQuestion">¿Cómo valorarías tu nivel de gestión del tiempo al trabajar en proyectos o tareas de grupo?</h4>
+                <div>
+                    <input type="radio" id="EntornServidor" class="identificacionNombre" value="Entorn Servidor">
+                    <label for="EntornoServidor">Baja (me cuesta organizarme o cumplir plazos)</label>
+                </div>
+                <div>
+                    <input type="radio" id="Desplegament Aplicacions" class="identificacionNombre" value="Desplegament Aplicacions">
+                    <label for="DesplegamentAplicacions">Media (a veces me organizo bien, pero puedo mejorar)</label>
+                </div>
+                <div>
+                    <input type="radio" id="EntornClient" class="identificacionNombre" value="Entorn Client">
+                    <label for="EntornClient">Alta (soy constante y cumplo los tiempos con facilidad)</label>
+                </div>
+            </div>
+
+            <div class="questionBlock">
+                <h4 class="fieldQuestion">En una escala del 1 al 5, donde 1 es “nada de estrés” y 5 es “mucho estrés”, ¿cómo te has sentido durante este proyecto o trabajo en equipo?</h4>
+                <div>
+                    <input class="inputQuestion fieldNumber" type="number" min="1" max="5" placeholder="Número entre 1 y 5" class="identificacionNumero" required>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="field">
+            <legend>
+                <h3 class="fieldTitulo">Logística</h3>
+            </legend>
+
+            <div class="questionBlock">
+                <h4 class="fieldQuestion">Elige el color principal de tu equipo (por ejemplo, para representar tu grupo o identificarte visualmente)</h4>
+                <div>
+                    <input type="color" id="EntornServidor" class="identificacionNombre" value="Entorn Servidor">
+                </div>
+            </div>
+
+            <div class="questionBlock">
+                <h4 class="fieldQuestion">¿Qué sistema operativo prefieres usar para trabajar o estudiar?</h4>
+                <div>
+                    <select class="inputQuestion" name="sistemaOperativo" required>
+                        <option value="">Selecciona un sistema operativo</option>
+                        <option value="windows">Windows</option>
+                        <option value="macos">macOS</option>
+                        <option value="linux">Linux</option>
+                    </select>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="field">
+            <legend>
+                <h3 class="fieldTitulo">Logística</h3>
+            </legend>
+
+            <div class="questionBlock">
+                <h4 class="fieldQuestion">¿Tienes algun comentario o observacion que quieras decir?</h4>
+                <div>
+                    <textarea name="comentario" id="comentarioObservacion" placeholder="Observaciones o comentarios..."></textarea>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <button class="enviar">Enviar</button>
+
     </fieldset>
 </body>
 <?php
@@ -218,6 +291,21 @@ include 'includes/footer.php';
         flex-direction: column;
         align-items: center;
         gap: 10px;
+    }
+
+    .enviar {
+        margin: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(9, 65, 110, 1);
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .enviar:hover {
+        background-color: rgba(32, 93, 143, 1);
     }
 
     .identificacionCheckbox {
@@ -277,5 +365,9 @@ include 'includes/footer.php';
         clip: rect(0, 0, 0, 0);
         white-space: nowrap;
         border: 0;
+    }
+
+    textarea {
+        width: 100%;
     }
 </style>
