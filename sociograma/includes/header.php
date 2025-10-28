@@ -23,7 +23,7 @@
 
     header {
         text-align: center;
-        background-color: rgba(32, 93, 143, 1);
+        background-color: rgba(94, 154, 202, 1);
         padding-top: 10px;
         padding-bottom: 10px;
     }
